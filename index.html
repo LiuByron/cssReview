@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Test</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="user">
+        <a href="#" id="login">登录</a>
+      </div>
+      <ul>
+        <li><a href="#">CSS Review</a></li>
+        <li><a href="#">效果与动画</a></li>
+        <li><a href="#">工程与工程化</a></li>
+      </ul>
+    </nav>
+    <div class="headerMain">      
+      <ul class="introduction">
+        <li>- 2019年初新课</li>
+        <li>- 前端看家本领</li>
+        <li>- 全面深入讲解</li>
+      </ul>
+      <h1>全面深入讲解CSS</h1>
+    </div>
+  </header>
+  <section class="banner fadeIn">
+    <ul>
+      <li>
+        <div class="feature feature1"></div>
+        <p>特点1</p>
+      </li>
+      <li>
+        <div class="feature feature2"></div>
+        <p>特点2</p>
+      </li>
+      <li>
+        <div class="feature feature3"></div>
+        <p>特点3</p>
+      </li>
+    </ul>
+  </section>
+  <section class="main fadeIn fadeInDelay">
+    <div class="block block1">
+      <img src="./2.jpg" alt="photos">
+      <div class="blockText">
+        <h2>知识全面讲解</h2>
+        <ul>
+          <li>- 核心知识全面覆盖</li>
+          <li>- 核心知识全面覆盖</li>
+          <li>- 核心知识全面覆盖</li>
+        </ul>
+      </div>
+    </div>
+    <div class="block block2">
+        <div class="blockText">
+          <h2>知识全面讲解</h2>
+          <ul>
+            <li>- 核心知识全面覆盖</li>
+            <li>- 核心知识全面覆盖</li>
+            <li>- 核心知识全面覆盖</li>
+          </ul>
+        </div>
+        <img src="./4.jpg" alt="photos">
+      </div>
+  </section>
+  <footer>
+    Byron @ 2019
+  </footer>
+  <div class="progress"></div>
+  <div class="dialogWrapper">
+    <div class="mask"></div>
+    <div class="dialog">
+      <div class="title">登录</div>
+      <div class="body">
+        <form>
+          <ul>
+            <li>
+              <label>用户名</label>
+              <input type="text" name="username" />
+            </li>
+            <li>
+              <label>密 码</label>
+              <input type="password" name="password" />
+            </li>
+            <li class="operateWrapper">
+              <button id="cancelDialog">取消</button>
+              <button class="primary">登录</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    function showProgress () {
+      document.querySelector('.progress').classList.add('show')
+    }
+    function hideProgress () {
+      document.querySelector('.progress').classList.remove('show')
+    }
+    document.querySelector('#login').addEventListener('click', function (e) {
+      showProgress();
+      setTimeout(function(){
+        hideProgress();
+        document.querySelector('.dialogWrapper').classList.add('show');
+      },2000);
+      e.preventDefault();
+    })
+    document.querySelector('#cancelDialog').addEventListener('click', function () {
+      document.querySelector('.dialogWrapper').classList.remove('show');
+    })
+  </script>
+</body>
+</html>

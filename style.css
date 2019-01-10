@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style: none;
+}
+.fadeIn{
+  transform: translateY(100px);
+  opacity: 0;
+  animation: fadeIn 1s;
+  animation-fill-mode: forwards;
+}
+.fadeInDelay{
+  animation-delay: 1s;
+}
+@keyframes fadeIn{
+  form{
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+header{
+  background: linear-gradient(to bottom, #3A2CAC, #631D9F);
+  height: 280px;
+  padding: 20px;
+}
+header nav{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+header nav a{
+  color: #f0f0f0;
+  text-decoration: none;
+}
+header nav a:hover{
+  color: #f90;
+}
+header nav .user{
+  float: right;
+}
+header nav ul li{
+  display: inline-block;
+  padding-right: 40px;
+}
+header .headerMain{
+  width: 730px;
+  color: #f0f0f0;
+  margin: 50px auto;
+}
+header .headerMain .introduction{
+  float: right;
+}
+header .headerMain h1{
+  line-height: 70px;
+}
+.banner{
+  width: 690px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: -105px;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+}
+.banner ul{
+  font-size: 0;
+  text-align: center;
+}
+.banner ul li{
+  display: inline-block;
+  width: 160px;
+  height: 180px;
+  font-size: 14px;
+  text-align: center;
+}
+.banner ul li .feature{
+  background: #f90;
+  width: 80px;
+  height: 80px;
+  margin: 20px auto;
+  border-radius: 50%;
+}
+.main{
+  margin: 100px auto;
+  width: 720px;
+}
+.main .block{
+  margin-bottom: 100px;
+  margin-left: -20px;
+}
+.main .block .blockText{
+  float: left;
+  width: 260px;
+  line-height: 50px;
+  color: #999;
+  font-size: 24px;
+  margin-left: 20px;
+}
+.main .block .blockText h2{
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+.main .block img{
+  float: left;
+  width: 440px;
+  height: 235px;
+  margin-left: 20px;
+}
+.main .block:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+}
+.progress{
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 15px;
+  border: 1px solid #999;
+  border-radius: 15px;
+  background: linear-gradient(135deg, red 0%, red 33%, orange 33%, orange 66%, red 66%, red 100%);
+  background-size: 30px 15px;
+  animation: rolling 1s linear infinite;
+}
+.progress.show{
+  display: block;
+}
+@keyframes rolling{
+  from{
+    background-position: 0 0;
+    /* width: 0; */
+  }
+  to{
+    background-position: 30px 0;
+    /* width: 500px; */
+  }
+}
+.dialogWrapper{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 500px;
+}
+.dialogWrapper.show{
+  display: block;
+}
+.dialogWrapper .mask{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3)
+}
+.dialogWrapper .dialog{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+}
+.dialogWrapper.show .dialog{
+  animation: slideIn .4s;
+  animation-fill-mode: forwards;
+}
+@keyframes slideIn{
+  from{
+    transform: translate(-50%, -50%) rotateX(-90deg);
+  }
+  80%{
+    transform: translate(-50%, -50%) rotateX(10deg);
+  }
+  to{
+    transform: translate(-50%, -50%) rotateX(0deg);
+  }
+}
+.dialogWrapper .dialog .title{
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 30px;
+  border: 1px solid #f0f0f0f0;
+}
+.dialogWrapper .dialog .body{
+  padding: 30px 80px;
+}
+.dialogWrapper .dialog .body li{
+  line-height: 50px;
+  font-size: 20px;
+}
+.dialogWrapper .dialog .body li label{
+  display: inline-block;
+  width: 80px;
+}
+.dialogWrapper .dialog .body li input{
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 230px;
+  /* outline: none; */
+}
+.dialogWrapper .dialog .body li input:focus{
+  outline:0 none;
+}
+.dialogWrapper .dialog .body li.operateWrapper{
+  margin-top: 20px;
+}
+.dialogWrapper .dialog .body li.operateWrapper button{
+  width: 140px;
+  height: 40px;
+  background: #fff;
+  font-size: 20px;
+  border: 1px solid #999;
+  letter-spacing: 1em;
+  text-indent: 1em;
+  cursor: pointer;
+  margin-right: 50px;
+}
+.dialogWrapper .dialog .body li.operateWrapper button:last-of-type{
+  margin-right: 0;
+}
+.dialogWrapper .dialog .body li.operateWrapper button.primary{
+  background: #4990e2;
+  color: #fff;
+  border-color: #4990e2;
+}
+.show{
+  display: block;
+}
